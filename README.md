@@ -55,4 +55,3 @@ This repository is part of my **self-guided DevOps Practice**, where I build end
 ## 📬 Connect
 🔗 [GitHub](https://github.com/afrooz1)  
 🌐 Portfolio (Coming Soon)
-
