@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Simple Web App</title>
+    <style>
+        /* Body styling */
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #89f7fe, #66a6ff);
+        }
+
+        /* Card container */
+        .card {
+            background: #fff;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            text-align: center;
+            max-width: 400px;
+        }
+
+        /* Heading */
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        /* Paragraph */
+        p {
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        /* Button styling */
+        .btn {
+            background-color: #66a6ff;
+            color: #fff;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #89f7fe;
+            transform: translateY(-2px);
+        }
+
+        /* Live clock */
+        .clock {
+            font-size: 24px;
+            color: #333;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+
+        /* Footer note */
+        .footer {
+            margin-top: 15px;
+            font-size: 12px;
+            color: #999;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Welcome to My Web App!</h1>
+        <p>This app is running inside a Docker container.</p>
+        <p>This app is now automatically deployed via Jenkins CI/CD pipeline.</p>
+        <p>🔥 This is a live update for webhook test!</p>
+        <div class="clock" id="clock">--:--:--</div>
+        <button class="btn" onclick="alert('Hello from your container!')">Click Me!</button>
+        <div class="footer">Powered by Docker & Jenkins CI/CD</div>
+    </div>
+
+    <script>
+        // Function to update clock every second
+        function updateClock() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+        }
+
+        // Initial call
+        updateClock();
+
+        // Update every second
+        setInterval(updateClock, 1000);
+    </script>
+</body>
+</html>
