@@ -103,6 +103,7 @@ Automated software installation using user_data.
 
 Managed infrastructure lifecycle (init → plan → apply → destroy).
 
+---
 👨‍💻 Author
 
 Afrooz Habib
