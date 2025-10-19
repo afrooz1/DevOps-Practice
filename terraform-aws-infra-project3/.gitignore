@@ -1,0 +1,17 @@
+# Terraform files
+*.tfstate
+*.tfstate.backup
+.terraform/
+.crash
+*.log
+*.bak
+.lock.hcl
+
+
+
+# AWS credentials
+.aws/
+*.pem
+
+# Local environment
+*.docx
