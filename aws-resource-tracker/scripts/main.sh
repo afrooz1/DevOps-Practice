@@ -136,7 +136,9 @@ generate_html_report() {
 # --------------------------
 push_to_github() {
     echo "[+] Uploading report to GitHub..."
+    REPO_PATH="reports/$REPORT_FILE"
     BASE64_CONTENT=$(base64 -w 0 "$REPORT_PATH/$REPORT_FILE")
+
     FILE_CHECK=$(curl -s -H "Authorization: token $GITHUB_TOKEN" \
         https://api.github.com/repos/$GITHUB_USERNAME/$GITHUB_REPO/contents/$REPORT_PATH/$REPORT_FILE)
     SHA=$(echo "$FILE_CHECK" | jq -r '.sha // empty')
