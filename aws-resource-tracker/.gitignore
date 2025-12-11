@@ -1,0 +1,3 @@
+# Ignore reports folder outputs
+reports/
+config/example.env
