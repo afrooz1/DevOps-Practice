@@ -11,50 +11,35 @@ hr { border: 1px solid #ccc; margin: 20px 0; }
 </head>
 <body>
 
-<h1>AWS Cloud Resource Summary Report</h1>
+<h1>AWS Cloud Resource Summary Report (Safe Version)</h1>
 <hr>
 <h2>EC2 Instances</h2><pre>{
-  "total_instances": 1,
-  "running": 0,
-  "stopped": 1,
-  "details": [
+  "InstanceId": "****MASKED****",
+  "InstanceType": "t3.micro",
+  "AvailabilityZone": "ap-southeast-1c",
+  "State": "stopped",
+  "Name": "shell-script-example"
+}</pre>
+<h2>S3 Buckets</h2><pre></pre>
+<h2>IAM Users</h2><pre>{
+  "UserName": "Afrooz",
+  "MFAStatus": "Enabled",
+  "AccessKeys": [
     {
-      "InstanceId": "i-0d05f3e7d18610548",
-      "InstanceType": "t3.micro",
-      "AvailabilityZone": "ap-southeast-1c",
-      "State": "stopped",
-      "Name": "shell-script-example"
+      "AccessKeyId": "****MASKED****",
+      "Status": "Active",
+      "CreateDate": "2025-10-19T09:54:18+00:00"
     }
   ]
-}</pre>
-<h2>S3 Buckets</h2><pre>{
-  "total_buckets": 0,
-  "buckets": []
-}</pre>
-<h2>IAM Users</h2><pre>{
-  "total_users": 2,
-  "users": [
+}
+{
+  "UserName": "aws-resource-tracker",
+  "MFAStatus": "Disabled",
+  "AccessKeys": [
     {
-      "UserName": "Afrooz",
-      "MFAStatus": "Enabled",
-      "AccessKeys": [
-        {
-          "AccessKeyId": "AKIA5R5ESDXQSL5SABW5",
-          "Status": "Active",
-          "CreateDate": "2025-10-19T09:54:18+00:00"
-        }
-      ]
-    },
-    {
-      "UserName": "aws-resource-tracker",
-      "MFAStatus": "Disabled",
-      "AccessKeys": [
-        {
-          "AccessKeyId": "AKIA5R5ESDXQQNZ6OSWQ",
-          "Status": "Active",
-          "CreateDate": "2025-12-11T14:36:48+00:00"
-        }
-      ]
+      "AccessKeyId": "****MASKED****",
+      "Status": "Active",
+      "CreateDate": "2025-12-11T14:36:48+00:00"
     }
   ]
 }</pre>
