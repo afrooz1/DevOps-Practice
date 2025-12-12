@@ -1,88 +1,99 @@
-<<<<<<< HEAD
-# 🚀 Afrooz Habib — DevOps Practice Journey
+# AWS Resource Tracker
 
-Welcome to my **DevOps Practice Portfolio**, a self-guided learning and project journey built under mentorship.  
-This repository documents my hands-on practice with **AWS**, **Docker**, **Ansible**, **Jenkins**, **Kubernetes**, and **Monitoring tools** — from basics to advanced real-world automation.
+A **Bash + AWS CLI + GitHub automation tool** that collects your AWS cloud resources (EC2, S3, IAM) and generates a **JSON and HTML report**. Optionally, it can upload the report to a GitHub repository.
 
 ---
-
-## 📚 Project Index
-
-| # | Project Title | Focus Area | Status |
-|---|----------------|-------------|---------|
-| 01 | [AWS Static Website Hosting](./Project-01-AWS-Static-Website) | AWS S3 + CloudFront | ✅ Completed |
-| 02 | [Dockerized Web Application](./Project-02-Dockerized-WebApp) | Docker, Containers | 🔄 In Progress |
-| 03 | [CI/CD Pipeline with Jenkins](./Project-03-Jenkins-CICD-Pipeline) | Automation | ⏳ Pending |
-| 04 | [Ansible for AWS Infra Automation](./Project-04-Ansible-AWS-InfraSetup) | Configuration Mgmt | ⏳ Pending |
-| 05 | [Kubernetes App Deployment](./Project-05-Kubernetes-Deployment) | Container Orchestration | ⏳ Pending |
-| 06 | [Monitoring Stack: Prometheus + Grafana](./Project-06-Monitoring-with-Prometheus-Grafana) | Monitoring | ⏳ Pending |
-
----
-
-## 🧩 Tools & Technologies
-
-**Cloud:** AWS (S3, EC2, IAM, CloudFront, Route53)  
-**DevOps Tools:** Docker, Jenkins, Ansible, Kubernetes, Prometheus, Grafana  
-**Version Control:** Git & GitHub  
-**Automation & IaC:** Terraform (coming soon)  
-**Monitoring:** Prometheus + Grafana  
-**Documentation:** Markdown, draw.io, DOCX reports  
-
----
-
-## 📄 Documentation
-All project reports and architecture diagrams are available under:
-
-Docs/
-├── DevOps_Internship_Roadmap.docx
-└── Project_Tracking.xlsx
-
-
----
-
-## 🧠 About the Journey
-This repository is part of my **self-guided DevOps Practice**, where I build end-to-end projects using open-source tools and AWS services — simulating real-world DevOps workflows.
-
-  
-**Learner:** Afrooz Habib (DevOps Engineer – Fresher)
-
----
-
-## 🧰 Portfolio Tagline
-> “Engineer | DevSecOps | Cloud Automator | Open Source Builder”
-
----
-
-## 📬 Connect
-🔗 [GitHub](https://github.com/afrooz1)  
-🌐 Portfolio (Coming Soon)
-=======
-# AWS Resource Tracker (Shell Script + GitHub API)
-
-This project automatically collects AWS resource usage data (EC2, S3, IAM, etc.) using AWS CLI, generates a report, and uploads it to GitHub using the GitHub REST API.
 
 ## Features
-- EC2 instance summary  
-- S3 bucket summary  
-- IAM user summary  
-- JSON/Markdown report generation  
-- GitHub API integration  
-- Automation via cron or GitHub Actions
+
+- Collect EC2 instance details: total, running, stopped, instance type, AZ, Name.
+- Collect S3 bucket details: name, creation date, region.
+- Collect IAM user details: username, MFA status, access keys.
+- Save JSON reports locally.
+- Generate a clean HTML report (`cloud_report.html`).
+- Safe HTML version (`cloud_report_safe.html`) removes sensitive information.
+- Optionally upload the report to GitHub via API.
+
+---
 
 ## Project Structure
+
 aws-resource-tracker/
+│
 ├── scripts/
-│ └── main.sh
-├── reports/
+│ ├── main.sh # Main automation script
+│ └── report.sh # HTML report generator
+│
 ├── config/
-│ └── example.env
-├── utils/
+│ └── example.env # Environment variables (AWS credentials, GitHub token)
+│
+├── reports/ # JSON & HTML reports (ignored by Git)
+│
 └── README.md
 
 
-## Requirements
-- AWS CLI
-- jq
-- GitHub Personal Access Token
-- curl
->>>>>>> 4f86300 (Initial commit: AWS Resource Tracker project structure and scripts)
+---
+
+## Prerequisites
+
+- **AWS CLI** installed and configured with proper credentials.
+- **jq** installed for JSON processing.
+- Bash shell (Linux, Mac, or Git Bash on Windows).
+- GitHub Personal Access Token (if uploading report).
+
+---
+
+## Setup
+
+1. **Clone your repository:**
+
+```bash
+git clone https://github.com/<your-username>/<repo>.git
+cd aws-resource-tracker
+Create your environment file:
+
+cp config/example.env config/.env
+
+Edit .env with your AWS credentials, GitHub username, repository, and token:
+AWS_ACCESS_KEY_ID=YOUR_AWS_ACCESS_KEY
+AWS_SECRET_ACCESS_KEY=YOUR_AWS_SECRET_KEY
+AWS_DEFAULT_REGION=YOUR_REGION
+GITHUB_USERNAME=your-github-username
+GITHUB_REPO=your-repo-name
+GITHUB_TOKEN=your-personal-access-token
+REPORT_PATH=reports
+REPORT_FILE=cloud_report.html
+
+Usage
+
+Run the main script to collect AWS data and generate reports:
+
+cd scripts
+./main.sh
+
+
+Reports will be saved in reports/.
+
+Safe HTML version (cloud_report_safe.html) is generated automatically.
+
+If GitHub credentials are provided, the report is uploaded automatically.
+
+Notes
+
+The reports/ folder is ignored in Git to avoid committing sensitive information.
+
+The script uses base64 encoding to safely upload HTML files to GitHub.
+
+Make sure your AWS IAM user has read access to EC2, S3, and IAM.
+
+Security
+
+Sensitive data (like Access Keys) should never be committed.
+
+Use the _safe.html report when sharing publicly.
+
+Keep your .env file private.
+
+License
+
+MIT License © [Afrooz Habib]
