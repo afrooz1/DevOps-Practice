@@ -2,18 +2,18 @@
 <head>
 <title>AWS Cloud Resource Report</title>
 <style>
-body { font-family: Arial; margin: 20px; }
+body { font-family: Arial, sans-serif; margin: 20px; }
 h1 { color: #0A74DA; }
-pre { background: #f4f4f4; padding: 10px; border-radius: 5px; }
+h2 { color: #0D47A1; }
+pre { background: #f4f4f4; padding: 10px; border-radius: 5px; white-space: pre-wrap; word-wrap: break-word; }
+hr { border: 1px solid #ccc; margin: 20px 0; }
 </style>
 </head>
 <body>
 
-<h1> AWS Cloud Resource Summary Report </h1>
+<h1>AWS Cloud Resource Summary Report</h1>
 <hr>
-<h2>EC2 Instances</h2>
-<pre>
-{
+<h2>EC2 Instances</h2><pre>{
   "total_instances": 1,
   "running": 0,
   "stopped": 1,
@@ -26,18 +26,12 @@ pre { background: #f4f4f4; padding: 10px; border-radius: 5px; }
       "Name": "shell-script-example"
     }
   ]
-}
-</pre>
-<h2>S3 Buckets</h2>
-<pre>
-{
+}</pre>
+<h2>S3 Buckets</h2><pre>{
   "total_buckets": 0,
   "buckets": []
-}
-</pre>
-<h2>IAM Users</h2>
-<pre>
-{
+}</pre>
+<h2>IAM Users</h2><pre>{
   "total_users": 2,
   "users": [
     {
@@ -63,8 +57,8 @@ pre { background: #f4f4f4; padding: 10px; border-radius: 5px; }
       ]
     }
   ]
-}
-</pre>
+}</pre>
 <hr>
 <p>Report generated automatically using AWS CLI + Bash Automation.</p>
-</body></html>
+</body>
+</html>
