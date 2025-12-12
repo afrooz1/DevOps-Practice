@@ -1,0 +1,27 @@
+{
+  "total_users": 2,
+  "users": [
+    {
+      "UserName": "Afrooz",
+      "MFAStatus": "Enabled",
+      "AccessKeys": [
+        {
+          "AccessKeyId": "AKIA5R5ESDXQSL5SABW5",
+          "Status": "Active",
+          "CreateDate": "2025-10-19T09:54:18+00:00"
+        }
+      ]
+    },
+    {
+      "UserName": "aws-resource-tracker",
+      "MFAStatus": "Disabled",
+      "AccessKeys": [
+        {
+          "AccessKeyId": "AKIA5R5ESDXQQNZ6OSWQ",
+          "Status": "Active",
+          "CreateDate": "2025-12-11T14:36:48+00:00"
+        }
+      ]
+    }
+  ]
+}
